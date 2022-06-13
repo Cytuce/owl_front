@@ -2,19 +2,30 @@
   <el-container>
     <el-header>
       <el-row>
-        <el-col :span="4"><i class="left">猫头鹰助理</i></el-col>
-        <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
+        <el-col :span="4">
+          <el-image :src="require('@/assets/7.png')" style="width: 60px; height: 60px; position: fixed">
+          </el-image><b class="top_left_text">猫头鹰助理</b>
+        </el-col>
+        <el-col :span="4"></el-col>
         <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
         <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
         <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
         <el-col :span="4">
+          <el-col :span="4">
+            <el-image :src="require('@/assets/8.png')" style="width: 60px; height: 60px; position: absolute; left: 1280px">
+            </el-image>
+          </el-col>
           <el-popover
           placement="top-start"
-          title="标题"
+          title="Shawn"
           width="200"
           trigger="hover"
-          content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"
           class="right">
+            <div>
+              this is Shawn
+            </div>
+            <br>
+            <el-button type="danger">注销</el-button>
           <el-button slot="reference">Shawn</el-button>
         </el-popover>
         </el-col>
@@ -112,6 +123,11 @@ body > .el-container {
   /*width: 300px;*/
   /*border: 3px solid #73AD21;*/
   /*padding: 10px;*/
+}
+
+.top_left_text{
+  position: absolute;
+  left: 80px;
 }
 
 </style>
