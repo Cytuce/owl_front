@@ -14,22 +14,16 @@ export default new Router({
   routes: [{
     path: '/',
     redirect: '/login'
-  }, {
-    path: '/home',
-    name: 'home',
-    component: Home
-  }, {
+  },
+  // }, {
+  //   path: '/home',
+  //   name: 'home',
+  //   component: Home
+  // }, {
+  {
     path: '/user',
     name: 'user',
     component: User
-  }, {
-    path: '/phoneAssist',
-    name: 'phoneAssist',
-    component: PhoneAssist
-  }, {
-    path: '/recordList',
-    name: 'recordList',
-    component: RecordList
   }, {
     path: '/login',
     name: 'login',
@@ -42,9 +36,10 @@ export default new Router({
     path: '/Main',
     name: 'Main',
     component: Main,
+    redirect: {name: 'Home'},
     children: [
       {
-        path: '/',
+        path: 'Home',
         name: 'Home',
         component: Home
       },

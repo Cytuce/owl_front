@@ -26,13 +26,13 @@
           default-active="activeIndex"
           class="el-menu-vertical-demo"
           @select="handleSelect">
-          <el-menu-item index="/home">
+          <el-menu-item index="/Main/Home">
             <i class="el-icon-s-home"> 首页</i>
           </el-menu-item>
-          <el-menu-item index="/phoneAssist">
+          <el-menu-item index="/Main/phoneAssist">
             <i class="el-icon-phone-outline"> 电话辅销</i>
           </el-menu-item>
-          <el-menu-item index="/recordList">
+          <el-menu-item index="/Main/recordList">
             <i class="el-icon-document"> 记录列表</i>
           </el-menu-item>
         </el-menu>
