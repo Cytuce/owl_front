@@ -89,6 +89,8 @@ export default {
         if (valid) {
           console.log('submit!')
           if (this.ruleForm.userName === '1' && this.ruleForm.password === '1') {
+            localStorage.setItem('user_id', this.ruleForm.userName)
+            localStorage.setItem('token', 'ssd')
             this.$router.push('/main')
           } else {
             this.$message({
