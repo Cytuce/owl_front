@@ -10,7 +10,7 @@
             <el-form>
               <el-form-item>
                 <el-row style="text-align: center">
-                  <b> 登录 </b>
+                  <b style="font-size: 32px; margin-bottom: 0"> 登录 </b>
                 </el-row>
               </el-form-item>
               <el-form-item>
@@ -25,7 +25,7 @@
               </el-form-item>
               <el-form-item>
                 <el-row style="text-align: center">
-                  <router-link to="/home">账号密码登录</router-link>
+                  <router-link to="/login">账号密码登录</router-link>
                 </el-row>
               </el-form-item>
             </el-form>
