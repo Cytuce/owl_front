@@ -34,7 +34,7 @@
         <br>xxxxxx
         <br>
         <br>
-        <el-button type="primary"><router-link to="/phoneAssist">电话辅销</router-link></el-button></el-col>
+        <el-button type="primary"><router-link to="/Main/phoneAssist" class="buttonStyle">电话辅销</router-link></el-button></el-col>
       <el-col :span="8">
         <br>
         <br>
@@ -44,7 +44,7 @@
         <br>
         <br>
         <br>
-        <el-button type="primary"><router-link to="/recordList">记录列表</router-link></el-button></el-col>
+        <el-button type="primary"><router-link to="/Main/recordList" class="buttonStyle">记录列表</router-link></el-button></el-col>
       <el-col :span="8"><el-image :src="require('@/assets/Group 1.png')"
                                   style="width: 600px; height: 600px" class="pic"></el-image>
       </el-col>
@@ -123,6 +123,12 @@ body > .el-container {
   /*width: 300px;*/
   /*border: 3px solid #73AD21;*/
   /*padding: 10px;*/
+}
+
+.buttonStyle{
+  text-decoration:none;
+  color: black;
+  font-size: 20px;
 }
 
 </style>
