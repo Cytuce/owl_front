@@ -10,7 +10,7 @@
   <div>
   <el-breadcrumb separator="/">
     <el-breadcrumb-item :to="{ path: '/' }" class="el-icon-s-home"></el-breadcrumb-item>
-    <el-breadcrumb-item><a href="/">首页</a></el-breadcrumb-item>
+    <el-breadcrumb-item><a href="/#/Main">首页</a></el-breadcrumb-item>
   </el-breadcrumb>
     <el-row>
       <br>

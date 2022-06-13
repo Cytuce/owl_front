@@ -2,7 +2,7 @@
   <div>
     <el-breadcrumb separator="/">
       <el-breadcrumb-item :to="{ path: '/' }" class="el-icon-s-home"></el-breadcrumb-item>
-      <el-breadcrumb-item><a href="/">电话辅销</a></el-breadcrumb-item>
+      <el-breadcrumb-item><a href="/#/Main/phoneAssist">电话辅销</a></el-breadcrumb-item>
     </el-breadcrumb>
     <el-row><br></el-row>
     <el-row>

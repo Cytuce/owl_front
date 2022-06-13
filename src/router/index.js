@@ -8,6 +8,7 @@ import Login from '../components/Login'
 import OA from '../components/OA'
 import Main from '../components/Main'
 import Error from '../components/Error'
+import RecordDetail from '../components/RecordDetail'
 
 Vue.use(Router)
 
@@ -46,6 +47,10 @@ export default new Router({
         path: 'phoneAssist',
         name: 'phoneAssist',
         component: PhoneAssist
+      }, {
+        path: 'recordList/recordDetail',
+        name: 'recordDetail',
+        component: RecordDetail
       }
     ]
   }, {
