@@ -127,7 +127,7 @@ body > .el-container {
 
 .buttonStyle{
   text-decoration:none;
-  color: black;
+  color: white;
   font-size: 20px;
 }
 

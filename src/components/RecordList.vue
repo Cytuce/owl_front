@@ -46,7 +46,7 @@
       </el-form-item>
       <!--button-->
       <el-form-item class="formItem">
-        <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+        <el-button type="primary" @click="submitForm('ruleForm')">查询</el-button>
         <el-button @click="resetForm('ruleForm')">重置</el-button>
       </el-form-item>
 
