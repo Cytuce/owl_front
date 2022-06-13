@@ -11,10 +11,8 @@
         <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
         <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
         <el-col :span="4">
-          <el-col :span="4">
-            <el-image :src="require('@/assets/8.png')" style="width: 60px; height: 60px; position: absolute; left: 1280px">
-            </el-image>
-          </el-col>
+          <el-image :src="require('@/assets/8.png')" style="width: 60px; height: 60px; position: absolute; left: 1280px">
+          </el-image>
           <el-popover
           placement="top-start"
           title="Shawn"
@@ -25,7 +23,7 @@
               this is Shawn
             </div>
             <br>
-            <el-button type="danger">注销</el-button>
+            <el-button type="danger" @click="LogOutNotification">注销</el-button>
           <el-button slot="reference">Shawn</el-button>
         </el-popover>
         </el-col>
@@ -64,6 +62,23 @@ export default {
     }
   },
   methods: {
+    LogOutNotification () {
+      this.$confirm('Are you sure to log out?', 'Warning', {
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'No',
+        type: 'warning'
+      }).then(() => {
+        this.$message({
+          type: 'success',
+          message: 'log out success!'
+        })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: 'log out canceled'
+        })
+      })
+    },
     handleSelect (key, keyPath) {
       if (key === this.$route.path) {
         return
