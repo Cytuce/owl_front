@@ -6,12 +6,12 @@
           <el-image :src="require('@/assets/7.png')" style="width: 60px; height: 60px; position: fixed">
           </el-image><b class="top_left_text">猫头鹰助理</b>
         </el-col>
-        <el-col :span="4"></el-col>
-        <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
-        <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
+        <el-col :span="4"><br></el-col>
+        <el-col :span="4"><br></el-col>
+        <el-col :span="4"><br></el-col>
+        <el-col :span="4"><br></el-col>
         <el-col :span="4">
-          <el-image :src="require('@/assets/8.png')" style="width: 60px; height: 60px; position: absolute; left: 1280px">
+          <el-image :src="require('@/assets/8.png')" style="width: 60px; height: 60px; float: right; left: 100px">
           </el-image>
           <el-popover
           placement="top-start"
@@ -23,8 +23,8 @@
               this is Shawn
             </div>
             <br>
-            <el-button type="danger" @click="LogOutNotification">注销</el-button>
-          <el-button slot="reference">Shawn</el-button>
+            <el-button type="danger" @click="LogOutNotification">Log out</el-button>
+          <el-button slot="reference" style="vertical-align: middle">Shawn</el-button>
         </el-popover>
         </el-col>
       </el-row>
