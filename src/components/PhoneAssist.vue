@@ -15,41 +15,79 @@
     </el-row>
     <br>
     <div class="communicate_box">
+      <el-scrollbar style="height:100%">
       <el-card class="box-card">
-        <div v-for="o in 4" :key="o" class="text item">
-          {{'列表内容 ' + o }}
-        </div>
-        <el-card class="box-card">
-          <div v-for="o in 4" :key="o" class="text item">
+        <el-card class="box-card" v-for="item in list">
+          <div v-for="o in item" :key="o" class="text item">
             {{'列表内容 ' + o }}
           </div>
         </el-card>
-        <el-card class="box-card">
-          <div v-for="o in 4" :key="o" class="text item">
-            {{'列表内容 ' + o }}
-          </div>
-        </el-card>
+<!--        <el-card class="box-card">-->
+<!--          <div v-for="o in 4" :key="o" class="text item">-->
+<!--            {{'列表内容 ' + o }}-->
+<!--          </div>-->
+<!--        </el-card>-->
+<!--        <el-card class="box-card">-->
+<!--          <div v-for="o in 4" :key="o" class="text item">-->
+<!--            {{'列表内容 ' + o }}-->
+<!--          </div>-->
+<!--        </el-card>-->
+<!--        <el-card class="box-card">-->
+<!--          <div v-for="o in 4" :key="o" class="text item">-->
+<!--            {{'列表内容 ' + o }}-->
+<!--          </div>-->
+<!--        </el-card>-->
+<!--        <el-card class="box-card">-->
+<!--          <div v-for="o in 4" :key="o" class="text item">-->
+<!--            {{'列表内容 ' + o }}-->
+<!--          </div>-->
+<!--        </el-card>-->
       </el-card>
+      </el-scrollbar>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'PhoneAssist'
+  name: 'PhoneAssist',
+  data () {
+    return {
+      list: [
+        {
+          name: 'zjh',
+          para: 'xsaxsaxsa'
+        }, {
+          xsax: 'xsa',
+          xsa: '111'
+        }, {
+          xsax: 'xsa',
+          xsa: '111'
+        }
+      ]
+    }
+  }
 }
 </script>
 
-<style scoped>
+<style>
 .communicate_box{
   overflow: hidden;
-  height: 300px;
+  margin: 0 auto;
+  width: auto;
+  height: 570px;
   color: #B3C0D1;
+  /*margin: 0 auto;*/
 }
 
-.scrollMenuBox {
-  height: 200px;
-  width: 100px;
-  border: 1px solid red;
+/*.scrollMenuBox {*/
+/*  height: 200px;*/
+/*  width: 100px;*/
+/*  border: 1px solid red;*/
+/*}*/
+
+/* 需要在外层套一个div,切记命名特殊一点,防止因缺少scoped，对其他页面会有冲突 */
+.center .el-scrollbar__wrap {
+  overflow-x: hidden;
 }
 </style>
