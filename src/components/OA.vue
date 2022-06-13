@@ -1,13 +1,13 @@
 <template>
   <el-container >
-    <el-header style = "line-height: 80px;">猫头鹰助理</el-header>
-    <el-divider></el-divider>
+    <el-header style="line-height: 40px; height: 40px;">猫头鹰助理</el-header>
+    <el-divider class="el-divider--horizontal"></el-divider>
     <el-main style = "line-height: 400px;">
       <el-row>
         <el-col :span="8"><div class="grid-content bg-white"></div></el-col>
-        <el-col :span="8">
+        <el-col :span="8" style="margin-top: 80px">
           <div>
-            <el-form>
+            <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" class="demo-ruleForm">
               <el-form-item>
                 <el-row style="text-align: center">
                   <b style="font-size: 32px; margin-bottom: 0"> 登录 </b>
@@ -20,7 +20,7 @@
               </el-form-item>
               <el-form-item>
                 <el-row style="text-align: center">
-                  <el-button type="primary" >OA自动登录</el-button>
+                  <el-button type="primary" @click="submitForm('ruleForm')"> OA自动登录</el-button>
                 </el-row>
               </el-form-item>
               <el-form-item>
@@ -33,7 +33,7 @@
         </el-col>
         <el-col :span="8">
           <el-image :src="require('@/assets/7.png')"
-                    style="width: 450px; height: 450px" class = "bg_picture">
+                    style="width: 343px; height: 450px" class = "bg_picture">
           </el-image>
         </el-col>
       </el-row>
@@ -60,8 +60,8 @@ export default {
     }
     return {
       ruleForm: {
-        checkId: '',
-        checkPass: ''
+        userName: '',
+        password: ''
       },
       rules: {
         checkId: [
@@ -77,7 +77,8 @@ export default {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!')
+          console.log('submit!')
+          this.$router.push('/main')
         } else {
           console.log('error submit!!')
           return false
@@ -94,9 +95,10 @@ export default {
 <style scoped>
 .el-row {
   margin-bottom: 20px;
-&:last-child {
-   margin-bottom: 0;
- }
+}
+
+.el-col.last-child {
+  margin-bottom: 0;
 }
 .el-col {
   border-radius: 4px;
@@ -121,5 +123,11 @@ export default {
 }
 .user_picture {
   left: 35%;
+}
+.el-divider--horizontal {
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin: 0 0;
 }
 </style>

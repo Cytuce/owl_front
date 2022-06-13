@@ -15,12 +15,12 @@
                   <b style="font-size: 32px; margin-bottom: 0"> 登录 </b>
                 </el-row>
               </el-form-item>
-              <el-form-item label="工号" prop="checkId">
-                <el-input style="width: 400px" placeholder="请输入内容" v-model="ruleForm.checkId"
+              <el-form-item label="工号" prop="userName">
+                <el-input style="width: 400px" placeholder="请输入内容" v-model="ruleForm.userName"
                           autocomplete="off"></el-input>
               </el-form-item>
-              <el-form-item label="密码" prop="checkPass">
-                <el-input style="width: 400px" placeholder="请输入内容" type="password" v-model="ruleForm.checkPass"
+              <el-form-item label="密码" prop="password">
+                <el-input style="width: 400px" placeholder="请输入内容" type="password" v-model="ruleForm.password"
                           autocomplete="off"></el-input>
               </el-form-item>
               <el-form-item>
@@ -65,14 +65,14 @@ export default {
     }
     return {
       ruleForm: {
-        checkId: '',
-        checkPass: ''
+        userName: '',
+        password: ''
       },
       rules: {
-        checkId: [
+        userName: [
           {validator: validateId, trigger: 'blur'}
         ],
-        checkPass: [
+        password: [
           {validator: validatePass, trigger: 'blur'}
         ]
       },
@@ -87,9 +87,13 @@ export default {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!')
-          if (this.ruleForm.checkId === '1' && this.ruleForm.checkPass === '1') {
+          console.log('submit!')
+          if (this.ruleForm.userName === '1' && this.ruleForm.password === '1') {
             this.$router.push('/main')
+          } else {
+            this.$message({
+              message: '账号密码不匹配！'
+            })
           }
         } else {
           console.log('error submit!!')
