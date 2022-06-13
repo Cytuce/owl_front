@@ -1,7 +1,7 @@
 <template>
   <el-container>
-    <el-header>
-      <el-row>
+    <el-header style="line-height: 45px; height: 45px;">
+      <el-row >
         <el-col :span="4">
           <el-image :src="require('@/assets/7.png')" style="width: 60px; height: 60px; position: fixed">
           </el-image><b class="top_left_text">猫头鹰助理</b>
@@ -14,11 +14,11 @@
           <el-image :src="require('@/assets/8.png')" style="width: 60px; height: 60px; float: right; left: 100px">
           </el-image>
           <el-popover
-          placement="top-start"
-          title="Shawn"
-          width="200"
-          trigger="hover"
-          class="right">
+            placement="top-start"
+            title="Shawn"
+            width="200"
+            trigger="hover"
+            class="right">
             <div>
               this is Shawn
             </div>
@@ -29,33 +29,41 @@
         </el-col>
       </el-row>
     </el-header>
-    <el-container>
-      <el-aside width="200px">
-        <el-menu
-          default-active="activeIndex"
-          class="el-menu-vertical-demo"
-          @select="handleSelect">
-          <el-menu-item index="/Main/Home">
-            <i class="el-icon-s-home"> 首页</i>
-          </el-menu-item>
-          <el-menu-item index="/Main/phoneAssist">
-            <i class="el-icon-phone-outline"> 电话辅销</i>
-          </el-menu-item>
-          <el-menu-item index="/Main/recordList">
-            <i class="el-icon-document"> 记录列表</i>
-          </el-menu-item>
-        </el-menu>
-      </el-aside>
-      <el-main>
-        <router-view/>
-      </el-main>
-    </el-container>
+    <el-divider class="el-divider--horizontal"></el-divider>
+    <el-main style="line-height: 400px;">
+      <el-row>
+        <el-col :span="8">
+          <div class="grid-content bg-white"></div>
+        </el-col>
+        <el-col :span="8" style="margin-top: 80px">
+          <div>
+            <el-form>
+              <el-form-item>
+                <el-row style="text-align: center">
+                  <b style="font-size: 32px;"> 登录 </b>
+                </el-row>
+              </el-form-item>
+              <el-form-item>
+                <el-row style="text-align: center">
+                  <b style="font-size: 20px;"> 抱歉，您当前无访问权限 </b>
+                </el-row>
+              </el-form-item>
+            </el-form>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <el-image :src="require('@/assets/7.png')"
+                    style="width: 343px; height: 450px" class="bg_picture">
+          </el-image>
+        </el-col>
+      </el-row>
+    </el-main>
   </el-container>
 </template>
 
 <script>
 export default {
-  name: 'Main',
+  name: 'Error',
   data () {
     return {
       activeIndex: this.$route.path
@@ -88,54 +96,55 @@ export default {
     }
   }
 }
-
 </script>
 
 <style scoped>
-/*.el-container{height:100%;padding:0;margin:0;width:100%;}*/
-
-.el-header, .el-footer {
-  background-color: #B3C0D1;
-  color: #333;
-  line-height: 60px;
+.el-row {
+  margin-bottom: 60px;
 }
 
-.el-aside {
-  background-color: #D3DCE6;
-  color: #333;
-  line-height: 800px;
+.el-col.last-child {
+  margin-bottom: 0;
 }
 
-.el-main {
-  background-color: #E9EEF3;
-  color: #333;
-  height: 800px;
+.el-col {
+  border-radius: 4px;
 }
 
-body > .el-container {
-  margin-bottom: 40px;
+.bg-white {
+  background: #ffffff
 }
 
-.el-container:nth-child(5) .el-aside,
-.el-container:nth-child(6) .el-aside {
-  line-height: 260px;
+.bg-purple-light {
+  background: #e5e9f2;
 }
 
-.el-container:nth-child(7) .el-aside {
-  line-height: 320px;
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
+
+.row-bg {
+  padding: 10px 0;
+  background-color: #f9fafc;
+}
+
+.bg_picture {
+  left: 30%;
+  opacity: 60%;
+}
+
+.el-divider--horizontal {
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin: 20px 0px;
 }
 
 .right {
   position: absolute;
   right: 25px;
-  /*width: 300px;*/
-  /*border: 3px solid #73AD21;*/
-  /*padding: 10px;*/
-}
-
-.left {
-  position: absolute;
-  left: 25px;
+  margin: 5px;
   /*width: 300px;*/
   /*border: 3px solid #73AD21;*/
   /*padding: 10px;*/
@@ -143,7 +152,7 @@ body > .el-container {
 
 .top_left_text{
   position: absolute;
-  left: 80px;
+  left: 70px;
+  margin: 10px;
 }
-
 </style>

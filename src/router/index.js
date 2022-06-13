@@ -7,6 +7,7 @@ import RecordList from '../components/RecordList'
 import Login from '../components/Login'
 import OA from '../components/OA'
 import Main from '../components/Main'
+import Error from '../components/Error'
 
 Vue.use(Router)
 
@@ -47,6 +48,10 @@ export default new Router({
         component: PhoneAssist
       }
     ]
+  }, {
+    path: '/Error',
+    name: 'Error',
+    component: Error
   }
   ]
 })

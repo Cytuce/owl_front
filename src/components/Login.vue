@@ -1,6 +1,9 @@
 <template>
   <el-container>
-    <el-header style="line-height: 40px; height: 40px;">猫头鹰助理</el-header>
+    <el-header style="line-height: 45px; height: 45px;">
+      <el-image :src="require('@/assets/7.png')" style="width: 60px; height: 60px; position: fixed"> </el-image>
+      <b class="top_left_text">猫头鹰助理</b>
+    </el-header>
     <el-divider class="el-divider--horizontal"></el-divider>
     <el-main style="line-height: 400px;">
       <el-row>
@@ -94,7 +97,7 @@ export default {
             this.$router.push('/main')
           } else {
             this.$message({
-              message: '账号密码不匹配！'
+              message: '账号或密码不正确！'
             })
           }
         } else {
@@ -150,6 +153,11 @@ export default {
   display: block;
   height: 1px;
   width: 100%;
-  margin: 0 0;
+  margin: 20px 0px;
+}
+.top_left_text{
+  position: absolute;
+  left: 80px;
+  margin: 10px;
 }
 </style>
