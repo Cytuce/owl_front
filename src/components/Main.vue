@@ -72,6 +72,7 @@ export default {
           type: 'success',
           message: 'log out success!'
         })
+        this.$router.push({path: '/'})
       }).catch(() => {
         this.$message({
           type: 'info',
