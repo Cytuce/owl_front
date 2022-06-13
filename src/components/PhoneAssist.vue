@@ -17,7 +17,7 @@
     <div class="communicate_box">
       <el-scrollbar style="height:100%">
       <el-card class="box-card">
-        <el-card class="box-card" v-for="item in list">
+        <el-card class="box-card" v-for="item in list" :key="item">
           <div v-for="o in item" :key="o" class="text item">
             {{'列表内容 ' + o }}
           </div>
