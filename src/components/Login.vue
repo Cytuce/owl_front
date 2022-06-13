@@ -75,6 +75,11 @@ export default {
         checkPass: [
           {validator: validatePass, trigger: 'blur'}
         ]
+      },
+      pass: {
+        user_id: '',
+        isSucceed: '1',
+        token: ''
       }
     }
   },
@@ -83,6 +88,9 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           alert('submit!')
+          if (this.ruleForm.checkId === '1' && this.ruleForm.checkPass === '1') {
+            this.$router.push('/main')
+          }
         } else {
           console.log('error submit!!')
           return false
